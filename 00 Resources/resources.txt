@@ -1,0 +1,12 @@
+1. Namaste React Code Repository
+https://github.com/namastedev/namaste-react
+
+2. Namaste React Live Code Repo (Bonus)
+https://bitbucket.org/namastedev/namaste-react-live/src/master/
+
+3. CDN
+https://en.wikipedia.org/wiki/Content_delivery_network
+
+4. HTML attribute: crossorigin
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
