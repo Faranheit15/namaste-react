@@ -1,0 +1,20 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Episode 2 of Akshay Saini's Namaste React series",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faranheit15/namaste-react.git"
+  },
+  "keywords": [],
+  "author": "Faran Mohammad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faranheit15/namaste-react/issues"
+  },
+  "homepage": "https://github.com/Faranheit15/namaste-react#readme"
+}
