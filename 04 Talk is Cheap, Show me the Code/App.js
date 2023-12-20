@@ -1265,21 +1265,30 @@ const resList = [
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const {
+    cloudinaryImageId,
+    name,
+    cuisines,
+    sla,
+    avgRatingString,
+    costForTwo,
+  } = resData.info;
   return (
     <div className="res-card">
       <img
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${resData.info.cloudinaryImageId}`}
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
         className="res-logo"
         alt="res-logo"
       />
-      <h3>{resData.info.name}</h3>
-      <h4>{resData.info.cuisines.join(", ")}</h4>
-      <h4>{resData.info.sla.slaString}</h4>
-      <h4>{resData.info.avgRatingString} ⭐</h4>
-      <h4>{resData.info.costForTwo}</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{sla.slaString}</h4>
+      <h4>{avgRatingString} ⭐</h4>
+      <h4>{costForTwo}</h4>
     </div>
   );
 };
+
 const Body = () => {
   return (
     <div className="body">
@@ -1288,18 +1297,11 @@ const Body = () => {
         <button className="search-btn">Search</button>
       </div>
       <div className="res-container">
-        <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
-        <RestaurantCard resData={resList[3]} />
-        <RestaurantCard resData={resList[4]} />
-        <RestaurantCard resData={resList[5]} />
-        <RestaurantCard resData={resList[6]} />
-        <RestaurantCard resData={resList[7]} />
-        <RestaurantCard resData={resList[8]} />
-        <RestaurantCard resData={resList[9]} />
-        <RestaurantCard resData={resList[10]} />
-        <RestaurantCard resData={resList[11]} />
+        {resList.map((restaurant) => (
+          <RestaurantCard resData={restaurant} key={restaurant.info.id} />
+        ))}
+        {/* <RestaurantCard resData={resList[0]} />
+        <RestaurantCard resData={resList[1]} /> */}
         {/* <RestaurantCard
           resName="Tunday Kebab"
           cuisine="Kebab-Paratha, Biriyani"
