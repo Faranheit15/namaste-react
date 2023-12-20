@@ -42,7 +42,15 @@ const Header = () => {
 const RestaurantCard = () => {
   return (
     <div className="res-card">
+      <img
+        src="https://lh3.googleusercontent.com/p/AF1QipNBRgpz_0NevTSb9nBnriqH8w18SzsANv27MPgi=w768-h768-n-o-v1"
+        className="res-logo"
+        alt="res-logo"
+      />
       <h3>Tunday Kebab</h3>
+      <h4>Biriyani, Indian, Mughlai</h4>
+      <h4>36 minutes</h4>
+      <h4>⭐⭐⭐⭐</h4>
     </div>
   );
 };
@@ -54,6 +62,12 @@ const Body = () => {
         <button className="search-btn">Search</button>
       </div>
       <div className="res-container">
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
         <RestaurantCard />
       </div>
     </div>
