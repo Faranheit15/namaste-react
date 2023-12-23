@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
+  padding: 0 20px;
 }
 
 .logo {
@@ -21,9 +22,6 @@
   list-style: none;
   padding: 10px;
   margin: 10px;
-}
-
-.nav-item {
   cursor: pointer;
 }
 
@@ -39,7 +37,7 @@
 .res-card {
   margin: 5px;
   padding: 5px;
-  width: 300px;
+  width: 250px;
   border: 0.5px solid rgb(196, 190, 190);
   background-color: #f0f0f0;
 }
@@ -56,7 +54,24 @@
 
 .footer {
   background-color: darkgrey;
-  margin-bottom: 0px;
+  padding: 5px;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+}
+
+.shimmer-container {
   display: flex;
-  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  margin: 5px;
+  height: 600px;
+  width: 300px;
+  background-color: #f0f0f0;
+}
+
+.button {
+  padding: 0 30px;
 }
