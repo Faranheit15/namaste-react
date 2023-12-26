@@ -28,7 +28,7 @@ const Body = () => {
     const filteredRestaurants = restaurantList.filter(
       (res) => res.info.avgRatingString > 4
     );
-    setRestaurantList(filteredRestaurants);
+    setRestaurantListForFilter(filteredRestaurants);
   };
 
   const searchRes = () => {
