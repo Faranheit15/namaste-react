@@ -13,13 +13,19 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li className="nav-item">
-            <Link to="/">Home</Link>
+            <Link style={{ textDecoration: "none" }} to="/">
+              Home
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="About">About Us</Link>
+            <Link style={{ textDecoration: "none" }} to="About">
+              About Us
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="Contact">Contact Us</Link>
+            <Link style={{ textDecoration: "none" }} to="Contact">
+              Contact Us
+            </Link>
           </li>
           <li className="nav-item">🛒</li>
           <button className="button" onClick={() => setIsLoggedIn(!isLoggedIn)}>

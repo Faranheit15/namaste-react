@@ -55,9 +55,9 @@
 }
 
 .footer {
+  position: absolute;
   background-color: darkgrey;
   padding: 5px;
-  bottom: 0px;
   text-align: center;
   width: 100%;
 }
