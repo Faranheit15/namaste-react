@@ -5,25 +5,25 @@ import React from "react";
 class About extends React.Component {
   constructor() {
     super();
-    console.log("Parent Constructor");
+    // console.log("Parent Constructor");
   }
 
   componentDidMount() {
-    console.log("Parent Mount");
+    // console.log("Parent Mount");
   }
 
   render() {
-    console.log("Parent Render");
+    // console.log("Parent Render");
     return (
       <div>
         <h1>About</h1>
         <p>The brains behind this app🧠</p>
 
-        <UserFunc
+        {/* <UserFunc
           name="Faran"
           location="Gorakhpur"
           contact="@wheresmybiriyani"
-        />
+        /> */}
         <UserClass name="Shazan" location="Noida" contact="@pexelbreaker" />
         <UserClass name="John" location="US" contact="@doejohn" />
       </div>

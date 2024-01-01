@@ -6,32 +6,46 @@ class UserClass extends React.Component {
     this.state = {
       followerCount: 0,
       //   followingCount: 2,
+      userInfo: {
+        name: "Nameless Wonder",
+        location: "Anywhere",
+        contact: "@None",
+      },
     };
-    console.log(this.props.name, "Child Constructor");
+    // console.log(this.props.name, "Child Constructor");
   }
 
-  componentDidMount() {
-    console.log(this.props.name, "Child Mount");
+  async componentDidMount() {
+    // console.log(this.props.name, "Child Mount");
+    const data = await fetch("https://api.github.com/users/Faranheit15");
+    const json = await data.json();
+    this.setState({ userInfo: json });
   }
 
   render() {
-    console.log(this.props.name, "Child Render");
-    const { name, location, contact } = this.props;
-    const { followerCount, followingCount } = this.state;
-    const increaseFollowers = () => {
-      this.setState({ followerCount: followerCount + 1 });
-    };
-    const decreaseFollowers = () => {
-      this.setState({ followerCount: followerCount - 1 });
-    };
+    // const { name, location, contact } = this.props;
+    // const { followerCount, followingCount } = this.state;
+
+    // console.log(name, "Child Render");
+
+    // const increaseFollowers = () => {
+    //   this.setState({ followerCount: followerCount + 1 });
+    // };
+    // const decreaseFollowers = () => {
+    //   this.setState({ followerCount: followerCount - 1 });
+    // };
+
+    const { name, location, login, avatar_url } = this.state.userInfo;
+
     return (
       <div className="user-card">
+        <img src={avatar_url} />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
-        <h4>Contact: {contact}</h4>
-        <h2>Followers: {followerCount}</h2>
+        <h4>Contact: @{login}</h4>
+        {/* <h2>Followers: {followerCount}</h2>
         <button onClick={increaseFollowers}>➕</button>
-        <button onClick={decreaseFollowers}>➖</button>
+        <button onClick={decreaseFollowers}>➖</button> */}
         {/* <h2>Following: {followingCount}</h2> */}
       </div>
     );
