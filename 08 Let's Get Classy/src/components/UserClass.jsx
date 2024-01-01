@@ -7,8 +7,15 @@ class UserClass extends React.Component {
       followerCount: 0,
       //   followingCount: 2,
     };
+    console.log(this.props.name, "Child Constructor");
   }
+
+  componentDidMount() {
+    console.log(this.props.name, "Child Mount");
+  }
+
   render() {
+    console.log(this.props.name, "Child Render");
     const { name, location, contact } = this.props;
     const { followerCount, followingCount } = this.state;
     const increaseFollowers = () => {
