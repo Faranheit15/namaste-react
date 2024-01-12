@@ -12,8 +12,6 @@ const Body = () => {
   const [restaurantListForFilter, setRestaurantListForFilter] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log(restaurantList);
-
   useEffect(() => {
     fetchResData();
   }, []);
@@ -24,13 +22,13 @@ const Body = () => {
     );
     const json = await res.json();
     setRestaurantList(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setRestaurantListForFilter(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
