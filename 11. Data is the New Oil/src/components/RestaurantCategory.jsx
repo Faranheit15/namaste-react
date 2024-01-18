@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
-  const [accordionToggle, setAccordionToggle] = useState(false);
+const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
+  // const [showItem, setShowItem] = useState(false);
+  // const handleClick = () => {
+  //   setShowItem(!showItem);
+  // };
   const handleClick = () => {
-    setAccordionToggle(!accordionToggle);
+    setShowIndex();
   };
   return (
     <div>
@@ -16,9 +19,9 @@ const RestaurantCategory = ({ data }) => {
           <span className="bold text-xl">
             {data.title} ({data.itemCards.length})
           </span>{" "}
-          <span>{accordionToggle ? "⬆️" : "⬇️"}</span>
+          <span>{showItem ? "⬆️" : "⬇️"}</span>
         </div>
-        {accordionToggle && <ItemList items={data.itemCards} />}
+        {showItem && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );

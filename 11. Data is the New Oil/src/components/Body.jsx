@@ -22,13 +22,13 @@ const Body = () => {
     );
     const json = await res.json();
     setRestaurantList(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setRestaurantListForFilter(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

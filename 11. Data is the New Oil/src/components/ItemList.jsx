@@ -9,7 +9,7 @@ const ItemList = ({ items }) => {
           key={item?.card?.info?.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left hover:bg-gray-200 hover:rounded-xl flex"
         >
-          <divc className="w-9/12">
+          <div className="w-9/12">
             <div className="py-2">
               <span>{item?.card?.info?.name}</span>
               <span>
@@ -20,7 +20,7 @@ const ItemList = ({ items }) => {
               </span>
             </div>
             <p className="text-xs">{item?.card?.info?.description}</p>
-          </divc>
+          </div>
           <div className="w-3/12">
             <div className="absolute">
               <button className="p-2 bg-white shadow-lg m-auto">➕</button>
