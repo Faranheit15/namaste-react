@@ -1,16 +1,20 @@
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Shimmer from "./Shimmer";
 
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+import UserContext from "../utils/UserContext";
+
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [restaurantListForFilter, setRestaurantListForFilter] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchResData();
@@ -22,13 +26,13 @@ const Body = () => {
     );
     const json = await res.json();
     setRestaurantList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setRestaurantListForFilter(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -84,6 +88,12 @@ const Body = () => {
           </button>
         </div>
         <div className=" m-4 p-4 flex items-center">
+          <input
+            type="text"
+            className="search-box border border-solid rounded-md"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
           <button
             className="px-4 py-2 m-4 bg-gray-100 rounded-xl"
             onClick={getTopRatedRestaurants}

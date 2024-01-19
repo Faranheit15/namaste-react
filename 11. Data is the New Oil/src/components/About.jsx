@@ -2,6 +2,8 @@ import UserFunc from "./UserFunc";
 import UserClass from "./UserClass";
 import React from "react";
 
+import UserContext from "../utils/UserContext";
+
 class About extends React.Component {
   constructor() {
     super();
@@ -17,13 +19,11 @@ class About extends React.Component {
     return (
       <div className=" m-4 p-4">
         <h1 className="text-3xl">About</h1>
+        <h2>Data from Context in Class Component👇🏻</h2>
+        <UserContext.Consumer>
+          {(data) => <p>{data.loggedInUser}</p>}
+        </UserContext.Consumer>
         <p>The brains behind this app🧠</p>
-
-        {/* <UserFunc
-          name="Faran"
-          location="Gorakhpur"
-          contact="@wheresmybiriyani"
-        /> */}
         <div className="flex">
           <UserClass name="Shazan" location="Noida" contact="@pexelbreaker" />
           <UserClass name="John" location="US" contact="@doejohn" />
@@ -32,18 +32,6 @@ class About extends React.Component {
     );
   }
 }
-
-// const About = () => {
-//   return (
-//     <div>
-//       <h1>About</h1>
-//       <p>The brains behind this app🧠</p>
-
-//       <UserFunc name="Faran" location="Gorakhpur" contact="@wheresmybiriyani" />
-//       <UserClass name="Shazan" location="Noida" contact="@pexelbreaker" />
-//     </div>
-//   );
-// };
 
 export default About;
 
