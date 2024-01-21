@@ -1,5 +1,7 @@
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 
+import { SWIGGY_API } from "../utils/constants";
+
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,9 +23,7 @@ const Body = () => {
   }, []);
 
   const fetchResData = async () => {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7718962&lng=83.34821459999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const res = await fetch(SWIGGY_API);
     const json = await res.json();
     setRestaurantList(
       json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
@@ -37,12 +37,12 @@ const Body = () => {
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
     );
-    console.log(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants ||
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-    );
+    // console.log(
+    //   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+    //     ?.restaurants ||
+    //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+    //       ?.restaurants
+    // );
   };
 
   const getTopRatedRestaurants = () => {
