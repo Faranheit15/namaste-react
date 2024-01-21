@@ -15,7 +15,6 @@ const Header = () => {
 
   //subscribing to the store using Selector Hook
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
 
   return (
     <div className="flex justify-between bg-blue-100 shadow-lg">
@@ -40,7 +39,9 @@ const Header = () => {
           <li className="px-4">
             <Link to="Grocery">Grocery</Link>
           </li>
-          <li className="px-4 text-xl">🛒({cartItems.length})</li>
+          <li className="px-4 text-xl">
+            <Link to="Cart">🛒({cartItems.length})</Link>
+          </li>
           <button
             className={
               isLoggedIn
