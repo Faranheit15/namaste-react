@@ -8,7 +8,7 @@ const Footer = () => {
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &#169; {`Copyright ${new Date().getFullYear()}`}{" "}
           <Link to="/" className="hover:underline">
-            Namaste Food
+            Fwiggy - The Swiggy Clone
           </Link>
           . All Rights Reserved.
         </span>
